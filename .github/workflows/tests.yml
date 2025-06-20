@@ -1,4 +1,4 @@
-name: Run Tests
+name: Run MyTests
 on: [push, pull_request]
 
 jobs:
