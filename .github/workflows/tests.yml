@@ -33,3 +33,21 @@ jobs:
           export DISPLAY=:0
           Xvfb :0 -screen 0 1280x720x24 >/dev/null 2>&1 &  
           mvn clean test -B
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: |
+            target/screenshots/
+            target/videos/
+      - name: Generate PDF report
+        run: |
+          java -cp target/classes PdfReporter
+          ls -lh report.pdf
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: pdf-report
+          path: report.pdf

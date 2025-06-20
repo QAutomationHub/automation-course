@@ -4,6 +4,7 @@ import com.microsoft.playwright.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
+
 public class BaseTest {
 
     protected Playwright playwright;
@@ -18,6 +19,14 @@ public class BaseTest {
         context = browser.newContext();
         page = context.newPage();
     }
+
+//    @AfterEach
+//    void onTestFailure(TestInfo testInfo) {
+//        if (testInfo.getExecutionException().isPresent()) {
+//            page.screenshot(new Page.ScreenshotOptions()
+//                    .setPath(Paths.get("errors/" + testInfo.getDisplayName() + ".png")));
+//        }
+//    }
 
     @AfterEach
     void tearDown() {
