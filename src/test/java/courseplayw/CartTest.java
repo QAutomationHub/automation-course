@@ -1,6 +1,5 @@
 package courseplayw;
 
-import base.BaseTest;
 import com.microsoft.playwright.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
