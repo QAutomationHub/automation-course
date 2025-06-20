@@ -25,10 +25,14 @@ public class StatusCodeInterceptionTest extends BaseTest {
 
     @Test
     void testMockedStatusCode() {
+
         page.navigate("https://the-internet.herokuapp.com/status_codes");
+
         // Клик по ссылке "404"
         page.getByText("404").click();
-        // ??? здесь нужно ждать загрузки страницы ?
+
+        // ??? Здесь нужно ждать загрузки страницы ?
+
         // Проверка мок-текста
         Assertions.assertTrue(page.isVisible("h3 >> text='Mocked Success Response'"), "Заголовок Mocked Success Response не найден"
         );
